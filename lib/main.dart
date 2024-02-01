@@ -28,35 +28,49 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Test Title"),
-      ),
-      drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: const [
-              DrawerHeader(
-                decoration: BoxDecoration(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(title: const Text("Test Title")),
+      body: Container(
+        alignment: Alignment.topLeft,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: MediaQuery.of(context).size.height / 4,
                   color: Colors.blue,
                 ),
-                child: Text("Drawer Header Part"),
-              ),
-              ListTile(
-                title: Text("Menu 1"),
-              ),
-            ],
-          )),
-      body: Center(
-        child: Text("COUNT NUMBER: $count"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() => count++),
-        tooltip: 'Test tooltip',
-        child: const Icon(Icons.mouse),
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: MediaQuery.of(context).size.height / 4,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: MediaQuery.of(context).size.height / 4,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: MediaQuery.of(context).size.height / 4,
+                  color: Colors.green,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
