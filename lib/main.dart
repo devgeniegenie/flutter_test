@@ -34,40 +34,32 @@ class _MyHomePageState extends State<MyHomePage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(title: const Text("Test Title")),
       body: Container(
-        alignment: Alignment.topLeft,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.black,
+        child: Stack(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.red,
-                ),
-              ],
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.blue,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.black,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.height / 4,
-                  color: Colors.green,
-                ),
-              ],
+            Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.only(top: 50, left: 50),
+              color: Colors.red,
+            ),
+            Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.only(top: 100, left: 100),
+              color: Colors.green,
+            ),
+            Container(
+              width: 200,
+              height: 200,
+              margin: const EdgeInsets.only(top: 150, left: 150),
+              color: Colors.yellow,
             ),
           ],
         ),
